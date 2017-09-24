@@ -11,8 +11,8 @@ class Average extends React.Component {
   pullFromApi() {
     axios.get('https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD&e=CCCAGG')
     .then((response) => {
-      const test = response.data['USD']
-      this.setState({test})
+      const price = response.data['USD']
+      this.setState({price})
     })
     .catch((error) => {
       console.log(error);
@@ -27,7 +27,7 @@ class Average extends React.Component {
   render() {
     return (
       <div>
-        <h1>Average Price: ${this.state.test}</h1>
+        <h1>Average Price: ${this.state.price}</h1>
       </div>
     )
   }
